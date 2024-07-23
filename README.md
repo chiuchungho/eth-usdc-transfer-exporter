@@ -8,7 +8,7 @@ You run it with script or docker.
 - by script: 
 1. `cd cmd`
 1. `chmod u+x run.sh`
-1. `./run.dh`
+1. `./run.sh`
 
 - docker
 1. `docker compose up && docker compose rm -f`
