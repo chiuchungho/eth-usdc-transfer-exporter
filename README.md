@@ -1,9 +1,9 @@
 # eth-usdc-transfer-exporter
 
-## task
+## Task
 Write a go application that uses the eth json rpc api to extract all USDC token transfers included in a given ethereum mainnet block and saves them into a sqlite database (each row should include at least sender / recipient and the value that was transferred)
 
-## how to run it
+## How to run it
 You run it with script or docker.
 - by script: 
 ```
@@ -15,7 +15,7 @@ You run it with script or docker.
 - docker
 `docker compose up && docker compose rm -f`
 
-## test
+## Test
 I have included 2 tests here only because of the time pressure. If it is for proper appication, I would also like to include integration test for the whole app.
 1. pkg/ethrpc/client_test.go
 1. pkg/db/insert_test.go
