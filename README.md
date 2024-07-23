@@ -25,15 +25,16 @@ I have included 2 tests here only because of the time pressure. If it is for pro
 It is an application that can be run with cli command. It also support the following arguments
 ```
 1. ETHRPCURL (eth rpc client)
-1. FROM_BLOCK (first block to select)
-1. TO_BLOCK (last block to select)
-1. LOG_LEVEL
-1. SQL_LITE_PATH (path to local sql lite)
+2. FROM_BLOCK (first block to select)
+3. TO_BLOCK (last block to select)
+4. LOG_LEVEL
+5. SQL_LITE_PATH (path to local sql lite)
 ```
 
 The availibiliy to input different args provides user to select different block range of USDC transfer.
 
 ## further improvement
 1. This task is only designed to select 1 block of USDC transfer. It only has limited amount of USDC transfor for 1 block. If we want to select all the past records of USDC transfer, this application can be improved with adding go goroutine to `cmd/exporter/controller.go` -> `func (c *Controller) run(ctx context.Context) error`. By doing the `GetTransferWithBlock` and `InsertUSDCTransfer` at the same time, it can process the transfer records in batches. 
+1. If the application needs to process all the ERC20 Transfer, I would build it as 2 app. 1 app as `extractor` which connect to eth rpc client and collect all the data. And then `extractor` pass the data with a message queue to another app as `exporter`. `exporter` will insert the data into big query or big table.
 1. sqlite is not as fast as postgreSQL, I would use postgreSQL to replace the current setting
 1. I assume that the data needs to be served to our FE or client, we can add an api server to serve the data.
