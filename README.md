@@ -30,7 +30,7 @@ It is an application that can be run with cli command. It also support the follo
 1. SQL_LITE_PATH (path to local sql lite)
 ```
 
-The availibiliy to input different args provides user to select different block range fo USDC transfer.
+The availibiliy to input different args provides user to select different block range of USDC transfer.
 
 ## further improvement
 1. This task is only designed to select 1 block of USDC transfer. It only has limited amount of USDC transfor for 1 block. If we want to select all the past records of USDC transfer, this application can be improved with adding go goroutine to `cmd/exporter/controller.go` -> `func (c *Controller) run(ctx context.Context) error`. By doing the `GetTransferWithBlock` and `InsertUSDCTransfer` at the same time, it can process the transfer records in batches. 
