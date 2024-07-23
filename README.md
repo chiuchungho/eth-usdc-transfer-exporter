@@ -6,13 +6,14 @@ Write a go application that uses the eth json rpc api to extract all USDC token 
 ## How to run it
 You run it with script or docker.
 - by script: 
-```
+
 1. `cd cmd`
 1. `chmod u+x run.sh`
 1. `./run.sh`
-```
+
 
 - docker
+
 `docker compose up && docker compose rm -f`
 
 ## Test
