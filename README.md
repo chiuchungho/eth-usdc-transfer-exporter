@@ -6,12 +6,14 @@ Write a go application that uses the eth json rpc api to extract all USDC token 
 ## how to run it
 You run it with script or docker.
 - by script: 
+```
 1. `cd cmd`
 1. `chmod u+x run.sh`
 1. `./run.sh`
+```
 
 - docker
-1. `docker compose up && docker compose rm -f`
+`docker compose up && docker compose rm -f`
 
 ## test
 I have included 2 tests here only because of the time pressure. If it is for proper appication, I would also like to include integration test for the whole app.
@@ -20,11 +22,13 @@ I have included 2 tests here only because of the time pressure. If it is for pro
 
 ## System Design
 It is an application that can be run with cli command. It also support the following arguments
-1. ETHRPCURL
-1. FROM_BLOCK
-1. TO_BLOCK
+```
+1. ETHRPCURL (eth rpc client)
+1. FROM_BLOCK (first block to select)
+1. TO_BLOCK (last block to select)
 1. LOG_LEVEL
-1. SQL_LITE_PATH
+1. SQL_LITE_PATH (path to local sql lite)
+```
 
 The availibiliy to input different args provides user to select different block range fo USDC transfer.
 
