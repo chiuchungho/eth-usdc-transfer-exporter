@@ -1,0 +1,16 @@
+services:
+  exporter:
+    image: chiuchungho/eth-usdc-transfer-exporter:0.5
+    environment:
+      - LOG_LEVEL=info
+      - ETHRPCURL=https://cloudflare-eth.com/
+      - FROM_BLOCK=20369703
+      - TO_BLOCK=20369703
+      - SQL_LITE_PATH=/app/db/db.db
+    command:
+      - "/bin/sh"
+      - "-c"
+      - "eth-usdc-transfer-exporter exporter"
+      - ""
+    volumes:
+      - ./:/app/db
